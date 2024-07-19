@@ -1,0 +1,14 @@
+---
+title: "HappyEric"
+---
+
+This page is a celebration of Eric. And what makes him very happy: RETIREMENT!
+
+```{r}
+#| echo: false
+
+1 + 1
+```
+
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
