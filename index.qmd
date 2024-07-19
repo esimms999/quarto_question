@@ -4,11 +4,20 @@ title: "HappyEric"
 
 This page is a celebration of Eric. And what makes him very happy: RETIREMENT!
 
+Eric's last working day is August 2, 2024.
+
 ```{r}
 #| echo: false
+# today_date <- Sys.Date()
+today_date <- as.Date("02aug2024", "%d%b%Y")
 
-1 + 1
+days <- as.numeric(as.Date("2aug2024", "%d%b%Y") - today_date + 1)
+
+if(days < 0) {
+  msg <- cat("Today is", format(today_date, "%B %d, %Y"), ". Eric has already been retired", abs(days), "days.")
+} else {
+  msg <- cat("Today is", format(today_date, "%B %d, %Y"), ". Eric has", days, "days before he is done.")
+}
+
+
 ```
-
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
