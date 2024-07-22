@@ -1,0 +1,10 @@
+name: esimms
+title:
+username: esimms
+account: esimms
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12350177
+bundleId: 8893276
+url: https://esimms.shinyapps.io/esimms/
+version: 1

@@ -8,8 +8,8 @@ Eric's last working day is August 2, 2024.
 
 ```{r}
 #| echo: false
-# today_date <- Sys.Date()
-today_date <- as.Date("04aug2024", "%d%b%Y")
+today_date <- Sys.Date()
+# today_date <- as.Date("04aug2024", "%d%b%Y")
 
 days <- as.numeric(as.Date("2aug2024", "%d%b%Y") - today_date)
 if (abs(days) == 1) {
