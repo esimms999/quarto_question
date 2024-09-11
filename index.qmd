@@ -4,7 +4,7 @@ title: "HappyEric"
 
 This page is a celebration of Eric. And what makes him very happy: RETIREMENT!
 
-Eric's last working day is August 2, 2024.
+Eric's last working day was August 2, 2024.
 
 ```{r}
 #| echo: false
