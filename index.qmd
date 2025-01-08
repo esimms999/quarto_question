@@ -1,31 +1,12 @@
 ---
-title: "HappyEric"
+title: "quarto_question"
 ---
-
-This page is a celebration of Eric. And what makes him very happy: RETIREMENT!
-
-Eric's last working day was August 2, 2024.
 
 ```{r}
 #| echo: false
 today_date <- Sys.Date()
 
-days <- as.numeric(as.Date("2aug2024", "%d%b%Y") - today_date)
-if (abs(days) == 1) {
-  days_text <- "1 day"
-} else {
-  days_text <- paste(abs(days), "days")
-}
-
-if(days == 0) {
-  cat("Today is ", format(today_date, "%B %d, %Y"), ". Eric will hand in the laptop, charger, \nbuilding pass and Amex card. Done!", sep = "")
-  } else {
-    if(days < 0) {
-      msg <- cat("Today is ", format(today_date, "%B %d, %Y"), ". Eric has already been retired ", days_text, ".", sep = "")
-      } else {
-        msg <- cat("Today is ", format(today_date, "%B %d, %Y"), ". Eric has ", days_text, " before he is done.", sep = "")
-      }
-    }
-
+days <- as.numeric(today_date - as.Date("1jan2025", "%d%b%Y"))
+msg <- cat("Today is ", format(today_date, "%B %d, %Y"), ". It has been ", days, " since January 1, 2025.", sep = "")
 
 ```
