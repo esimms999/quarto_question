@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Today is January 08, 2025. It has been 7 days since January 1, 2025.</code></pre>
+<pre><code>Today is January 11, 2025. It has been 10 days since January 1, 2025.</code></pre>
 </div>
 </div>
 
@@ -192,7 +192,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/esimms999\.quarto\.pub\/quarto_question");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
