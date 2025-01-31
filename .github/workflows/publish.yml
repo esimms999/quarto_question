@@ -1,0 +1,26 @@
+name: Render Quarto Report
+
+on:
+  schedule:
+    - cron: '* * * * *'  # Runs every day at midnight (adjust as needed)
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: r-lib/actions/setup-r@v4
+        with:
+          r-version: 'latest'  # Specify your desired R version
+
+      - run: |
+          # Install required R packages
+          #R -e "install.packages(c('quarto', 'your_package1', 'your_package2'))"
+          R -e "renv::restore()"
+
+      - run: |
+          # Render the Quarto document
+          # quarto render your_quarto_document.qmd --to pdf
+          # Or, to publish directly to GitHub Pages:
+          quarto publish --target gh-pages
