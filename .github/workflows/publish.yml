@@ -24,4 +24,4 @@ jobs:
           # Render the Quarto document
           # quarto render your_quarto_document.qmd --to pdf
           # Or, to publish directly to GitHub Pages:
-          quarto publish --target gh-pages
+          quarto publish --target docs
