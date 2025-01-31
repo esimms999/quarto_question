@@ -1,6 +1,7 @@
 name: Render Quarto Report
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '* * * * *'  # Runs every day at midnight (adjust as needed)
 
