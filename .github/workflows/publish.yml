@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
     schedule:
     - cron: '* * * * *'  # Runs every day at midnight (adjust as needed)
-    
-name: Quarto Publish
 
 jobs:
   build-deploy:
