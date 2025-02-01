@@ -2,26 +2,36 @@ name: Render Quarto Report
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'  # Runs every day at midnight (adjust as needed)
+    schedule:
+    - cron: '* * * * *'  # Runs every day at midnight (adjust as needed)
+    
+name: Quarto Publish
 
 jobs:
-  render:
+  build-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: r-lib/actions/setup-r@v2
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
         with:
-          r-version: 'latest'  # Specify your desired R version
+          r-version: '4.2.0'
 
-      - run: |
-          # Install required R packages
-          R -e "install.packages(c('quarto'))"
-          R -e "renv::restore()"
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
 
-      - run: |
-          # Render the Quarto document
-          # quarto render your_quarto_document.qmd --to pdf
-          # Or, to publish directly to GitHub Pages:
-          quarto publish --target docs
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
