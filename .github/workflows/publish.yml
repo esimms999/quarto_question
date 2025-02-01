@@ -17,7 +17,7 @@ jobs:
 
       - run: |
           # Install required R packages
-          #R -e "install.packages(c('quarto', 'your_package1', 'your_package2'))"
+          R -e "install.packages(c('quarto'))"
           R -e "renv::restore()"
 
       - run: |
