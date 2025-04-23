@@ -10,6 +10,6 @@ days <- as.numeric(today_date - as.Date("1jan2025", "%d%b%Y"))
 msg <- cat("Today is ", format(today_date, "%B %-d, %Y"), ". It has been ", days, " days since January 1, 2025.", sep = "")
 
 msg <- cat("Run DateTime: ", format(Sys.time()))
+```
 
 ver 1.1
-```
